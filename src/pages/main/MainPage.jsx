@@ -1,8 +1,10 @@
+import MainInfoComponent from "../../UI/mainInfo/MainInfoComponent";
+import cl from './MainPage.module.css'
 
 const MainPage = () => {
   return (
-    <div>
-      <h1>Main Page</h1>
+    <div className={cl.page}>
+      <MainInfoComponent/>
     </div>
   );
 };

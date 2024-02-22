@@ -3,6 +3,7 @@
 
 body{
     font-family: 'Poppins', sans-serif;
+    background-color: rgba(214, 247, 255, 0.1);
 }
 
 button, input, textarea, select {
