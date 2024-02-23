@@ -41,7 +41,12 @@
     width: 100%;
 }
 
+.image__container{
+    width: 80%;
+}
+
 .info{
+    margin-top: 32px;
     padding: 12px;
     margin-left: 0;
     width: 90%;
