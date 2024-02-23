@@ -32,8 +32,10 @@ const Navbar = () => {
         <FaBars className={cl.nav__icon} onClick={() => setVisible(!visible)}/>
         <nav className={navLinks.join(" ")}>
             <Link to="/main" onClick={handleShowNavbar}>Головна</Link>
+            <Link to="/news" onClick={handleShowNavbar}>Новини</Link>
+            <Link to="/projects" onClick={handleShowNavbar}>Проекти</Link>
             <Link to="/careers" onClick={handleShowNavbar}>Вакансii</Link>
-            <Link to="/events" onClick={handleShowNavbar}>Подii</Link>
+            <Link to="/contacts" onClick={handleShowNavbar}>Контакти</Link>
         </nav>
       </nav>
   );

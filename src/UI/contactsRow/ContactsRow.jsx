@@ -11,7 +11,7 @@ const ContactsRow = () => {
             </div>
             <div className={cl.contacts__item}>
                 <MdLocalPhone/>
-                <h2>+380956783456</h2>
+                <h2>+380123456789</h2>
             </div>
         </div>
   );
