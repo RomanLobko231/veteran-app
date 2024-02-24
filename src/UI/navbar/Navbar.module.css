@@ -21,7 +21,8 @@
     cursor: pointer;
 }
 
-.navbar__text span {
+.navbar__text h2 {
+    margin: 0;
     font-size: larger;
 }
 

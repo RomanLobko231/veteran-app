@@ -11,8 +11,10 @@ const MainInfoComponent = () => {
             </div>
             <div className={cl.info}>
                 <div className={cl.text}>
-                    <h1>A big title to draw attention</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis efficitur sapien. Suspendisse pellentesque vitae lectus eu maximus. Suspendisse lobortis risus ligula, imperdiet placerat ex sollicitudin eu. Duis et imperdiet arcu. Phasellus bibendum faucibus nulla eget condimentum. Nulla blandit varius eros sit amet varius. Phasellus neque sapien, tincidunt id iaculis eget, convallis at nisi. Phasellus faucibus ligula in porta luctus. Phasellus eros justo, consequat eu suscipit a, lacinia sed magna. Curabitur interdum felis ante, in vulputate tellus luctus sit amet. Fusce ac quam tincidunt, lacinia sapien eu, sagittis turpis. Sed cursus velit ac faucibus sollicitudin. Sed non metus nec odio dignissim feugiat ut ac felis. Quisque magna metus, vehicula a varius vitae, euismod et nunc.</p>
+                    <h1>Romny Veteran Support - хто, навiщo та де?</h1>
+                    <p style={{whiteSpace: 'break-spaces'}}>{
+                    `Ми - Всеукраїнська громадська організація заснована в 2015 році військовими та добровольцями, що приймали участь в Антитерористичній операції (АТО). У RVS ми розуміємо унікальні виклики, з якими стикаються ветерани та колишні військові, коли вони повертаються до цивільного життя.\n\nНаша мета — пропонувати вам руку допомоги на цьому шляху. Незалежно від того, чи шукаєте ви пораду з юридичних питань, шукаєте можливість наступної кар’єри чи потребуєте підтримки в адаптації до повсякденного життя, не соромтеся зв’язуватися з нами за вказаними нижче контактами.\n\nРазом ми працюватимемо над подоланням перешкод і побудовою вашого повноцінного життя!`
+                    }</p>
                 </div>
                 <ContactsRow/>
             </div>

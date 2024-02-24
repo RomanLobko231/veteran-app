@@ -1,0 +1,22 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 12px 0 12px;
+    margin-top: 24px;
+}
+
+.description {
+    width: 60%;
+}
+
+@media (max-width: 768px){
+.page{
+    padding: 0 4px 0 4px;
+}
+
+.description {
+    width: 95%;
+}
+}

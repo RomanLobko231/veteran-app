@@ -1,0 +1,48 @@
+.article__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 12px 0 12px;
+    margin-top: 24px;
+    width: 95%;
+}
+
+.article__container h1{
+    margin-bottom: 0;
+}
+
+.article__container img {
+    border-radius: 18px;
+}
+
+.date{
+    color: #7c7c7c;
+    font-size: smaller;
+}
+
+.text{
+    word-wrap: break-word;
+    width: 60%;
+}
+
+@media (max-width: 1050px){
+.article__container img{
+    border-radius: 12px;
+    width: 90%;
+}
+
+.text {
+    width: 95%;
+    font-size: x-small;
+}
+
+.date{
+    font-size: xx-small;
+}
+
+.article__container{
+    padding: 0 4px 0 4px;
+
+}
+}

@@ -1,21 +1,40 @@
 import NewsList from '../../UI/news/newsList/NewsList';
 import cl from './NewsPage.module.css'
+import { useEffect, useState } from 'react';
+import NewsService from '../../api/NewsService';
+import { useApiCall } from '../../hooks/useApiCall';
+import { TailSpin } from 'react-loader-spinner';
 
 const NewsPage = () => {
-    const news = [
-        { title: "Test Title", date: "24.02.2024", shortDescription: "This is a short description for the test news. I does not make sence and is used just to fill some space. That's why you should not read it any further, unless you really do not have anything other to do. Welp, here is the end of this short description. See ya!", photo: './soldier__handshake.jpg' },
-        { title: "Test Title", date: "30.01.2024", shortDescription: "This is a short description for the test news. I does not make sence and is used just to fill some space. That's why you should not read it any further, unless you really do not have anything other to do. Welp, here is the end of this short descriptionis is a short description for the test news. I does not make sence and is used just to fill some space. That's why you should not read it any further, unless you really do not have anything other to do. Welp, here is the end of this short description. is is a short description for the test news. I does not make sence and is used just to fill some space. That's why you should not read it any further, unless you really do not have anything other to do. Welp, here is the end of this short description. . See ya!", photo: './soldier__handshake.jpg' },
-        { title: "Test Title", date: "12.02.2024", shortDescription: "This is a short description for the test news. I does not make sence and is used just to fill some space. That's why you should not read it any further, unless you really do not have anything other to do. Welp, here is the end of this short description. See ya!", photo: './soldier__handshake.jpg' },
-        { title: "Test Title", date: "30.01.2024", shortDescription: "This is a short description for the test news. I does not make sence and is used just to fill some space. That's why you should not read it any further, unless you really do not have anything other to do. Welp, here is the end of this short descriptionis is a short description for the test news. I does not make sence and is used just to fill some space. That's why you should not read it any further, unless you really do not have anything other to do. Welp, here is the end of this short description. is is a short description for the test news. I does not make sence and is used just to fill some space. That's why you should not read it any further, unless you really do not have anything other to do. Welp, here is the end of this short description. . See ya!", photo: './soldier__handshake.jpg' },
-        { title: "Test Title", date: "30.01.2024", shortDescription: "This is a short description for the test news. I does not make sence and is used just to fill some space. That's why you should not read it any further, unless you really do not have anything other to do. Welp, here is the end of this short descriptionis is a short description for the test news. I does not make sence and is used just to fill some space. That's why you should not read it any further, unless you really do not have anything other to do. Welp, here is the end of this short description. is is a short description for the test news. I does not make sence and is used just to fill some space. That's why you should not read it any further, unless you really do not have anything other to do. Welp, here is the end of this short description. . See ya!", photo: './soldier__handshake.jpg' },
 
-    ]
+    const [news, setNews] = useState([]);
+    const [fetchNews, isLoading, error] = useApiCall( async () => {
+        const response = await NewsService.getAll();
+        setNews(response.data)
+    })
+
+    useEffect(() => {
+        fetchNews()
+    }, [])
+
 
   return (
     <div className={cl.page}>
       <h1>Новини</h1>
       <p>Всого: {news.length}</p>
-      <NewsList news={news}/>
+      {isLoading 
+       ? <TailSpin
+       visible={true}
+       height="50"
+       width="50"
+       color="#4285f4"
+       ariaLabel="tail-spin-loading"
+       radius="1"
+       wrapperStyle={{ marginTop: '5%' }}
+       wrapperClass="" />
+       : <NewsList news={news}/>
+
+       }
     </div>
   );
 };

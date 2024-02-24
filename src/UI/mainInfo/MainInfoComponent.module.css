@@ -23,6 +23,11 @@
 
 .text h1{
     margin-top: 0;
+    color: #32485c;
+}
+
+.text p {
+    font-size: large;
 }
 
 .info{
@@ -44,6 +49,11 @@
 .image__container{
     width: 80%;
 }
+
+.text p {
+    font-size: medium;
+}
+
 
 .info{
     margin-top: 32px;

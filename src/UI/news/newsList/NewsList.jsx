@@ -6,7 +6,7 @@ const NewsList = ({news}) => {
     return (
         <div className={cl.news__list}>
             {news.map(news =>
-                <NewsItem news={news}/>
+                <NewsItem news={news} key={news.id}/>
             )}
         </div>
     );

@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
       <nav className={rootClasses.join(" ")}>
         <div className={navbar_text.join(" ")}>
-             <span onClick={() => {navigate('')}}>Romny Veteran Support</span>
+             <h2 onClick={() => {navigate('')}}>Romny Veteran Support</h2>
         </div>
         <FaBars className={cl.nav__icon} onClick={() => setVisible(!visible)}/>
         <nav className={navLinks.join(" ")}>
