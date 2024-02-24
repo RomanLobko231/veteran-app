@@ -12,6 +12,7 @@ const CareerItem = ({career}) => {
         <div className={cl.career__info}>
       <div className={cl.title__city}>
             <h1>{career.title}</h1>
+            <div className={cl.dot}/>
             <p>{career.city}</p>
       </div>
       <p>{career.description}</p>

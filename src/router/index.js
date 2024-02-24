@@ -11,6 +11,5 @@ export const routes = [
     {path: "/news/:id", component: <NewsDetailsPage/>, exact: true},
     {path: "/careers/:id", component: <CareersDetailsPage/>, exact: true},
     {path: "*", component: <MainPage/>, exact: true}
-    // {path: "/careers", component: <CareerPage/>, exact: true},
-    // {path: "/events", component: <EventsPage/>, exact: true},
+   
 ]

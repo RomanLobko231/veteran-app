@@ -43,16 +43,30 @@
 }
 
 .title__city{
-    align-items: baseline;
+    align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
 }
 
 .title__city h1 {
     margin: 0;
 }
+
+
+.title__city p {
+margin: 0;
+color: #616161;
+}
+
+.dot {
+    height: 10%;
+    aspect-ratio: 1;
+    background-color: #353434;
+    border-radius: 50%;
+    display: inline-block;
+  }
 
 
 
@@ -73,6 +87,10 @@
     }
 
     .icon{
+        display: none;
+    }
+
+    .dot{
         display: none;
     }
 }
