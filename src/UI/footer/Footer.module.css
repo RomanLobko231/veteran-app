@@ -1,0 +1,49 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 70px 0 20px 0;
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+
+.footer h2 {
+    text-align: center;
+}
+
+.footer p {
+margin-bottom: 0;
+}
+
+.navigation{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.navigation a {
+    color: #3b3b3b;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: auto;
+    width: auto;
+    font-size: larger;
+    cursor: pointer;
+    margin-right: 2%;
+}
+
+
+
+.navigation a:hover {
+    color: #111111;
+}
+
+
+
+.navigation a:active {
+    color: #0f0e0e;
+}

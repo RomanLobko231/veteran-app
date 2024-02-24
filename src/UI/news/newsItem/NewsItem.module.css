@@ -1,13 +1,29 @@
 .news__card{
     background: #fff;
     padding: 26px;
-    border-radius: 8px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
+    border-radius: 14px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    position: relative;
     max-width: 400px;
+    max-height: 400px;
+    overflow: hidden;
     text-decoration: none;
     border: 2px solid transparent;
     transition: border 0.5s ease;
+}
+
+
+.news__card::after{
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom,rgba(255,255,255,0), rgb(255, 255, 255) 70%);
+    width: 100%;
+    height: 70px;
 }
 
 .news__card img{
@@ -18,5 +34,20 @@
 }
 
 .news__card:hover{
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.title__date{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.title__date p{
+ font-size: smaller;
+ color: #7c7c7c;
 }

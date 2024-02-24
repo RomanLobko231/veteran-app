@@ -4,6 +4,8 @@ import NewsComponent from "../../UI/news/newsComponent/NewsComponent";
 import cl from './MainPage.module.css'
 
 const MainPage = () => {
+
+   
   return (
     <div className={cl.page}>
       <MainInfoComponent/>

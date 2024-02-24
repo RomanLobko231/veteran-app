@@ -1,8 +1,13 @@
+import CareerItem from "../careerItem/CareerItem";
+import cl from './CareersList.module.css'
 
-const CareersList = () => {
+const CareersList = ({careers}) => {
+
   return (
-    <div>
-      
+    <div className={cl.careers__list}>
+      {careers.map(career => 
+        <CareerItem career={career}/>
+        )}
     </div>
   );
 };

@@ -1,0 +1,78 @@
+.card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    min-height: 100px;
+    max-height: 125px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 2%;
+    border-radius: 18px;
+    justify-content: space-between;
+}
+
+.career__info{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+}
+
+.card:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.icon{
+    height: 60%;
+    width: 10%;
+}
+
+.card::after{
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom,rgba(255,255,255,0), rgb(255, 255, 255) 70%);
+    width: 100%;
+    height: 70px;
+}
+
+.title__city{
+    align-items: baseline;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.title__city h1 {
+    margin: 0;
+}
+
+
+
+
+@media (max-width: 768px){
+    .card{
+        max-height: 300px;
+        padding: 5%;
+    }
+
+    .title__city p {
+        margin: 0;
+    }
+    
+
+    .title__city{
+        gap: 2%;
+    }
+
+    .icon{
+        display: none;
+    }
+}

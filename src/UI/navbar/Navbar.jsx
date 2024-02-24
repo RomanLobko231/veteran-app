@@ -20,22 +20,21 @@ const Navbar = () => {
     }
 
     const handleShowNavbar = () => {
-        if (window.innerWidth < 768) setVisible(!visible)
+        if (window.innerWidth < 850) setVisible(!visible)
     }
       
 
   return (
       <nav className={rootClasses.join(" ")}>
         <div className={navbar_text.join(" ")}>
-             <span onClick={() => {navigate('')}}>Veteran Help</span>
+             <span onClick={() => {navigate('')}}>Romny Veteran Support</span>
         </div>
         <FaBars className={cl.nav__icon} onClick={() => setVisible(!visible)}/>
         <nav className={navLinks.join(" ")}>
             <Link to="/main" onClick={handleShowNavbar}>Головна</Link>
             <Link to="/news" onClick={handleShowNavbar}>Новини</Link>
-            <Link to="/projects" onClick={handleShowNavbar}>Проекти</Link>
+            {/* <Link to="/projects" onClick={handleShowNavbar}>Проекти</Link> */}
             <Link to="/careers" onClick={handleShowNavbar}>Вакансii</Link>
-            <Link to="/contacts" onClick={handleShowNavbar}>Контакти</Link>
         </nav>
       </nav>
   );
