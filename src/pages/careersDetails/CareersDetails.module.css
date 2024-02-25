@@ -16,6 +16,14 @@
     padding: 0 4px 0 4px;
 }
 
+.page h1{
+    text-align: center;
+}
+
+.page p {
+    font-size: medium;
+}
+
 .description {
     width: 95%;
 }
