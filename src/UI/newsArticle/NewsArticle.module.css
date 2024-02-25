@@ -32,9 +32,13 @@
     width: 90%;
 }
 
+.article__container h1{
+    text-align: center;
+}
+
 .text {
     width: 95%;
-    font-size: x-small;
+    font-size: medium;
 }
 
 .date{
