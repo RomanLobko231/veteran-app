@@ -30,7 +30,7 @@
     width: 10%;
 }
 
-.card::after{
+/* .card::after{
     content: "";
     position: absolute;
     z-index: 1;
@@ -40,7 +40,7 @@
     background-image: linear-gradient(to bottom,rgba(255,255,255,0), rgb(255, 255, 255) 70%);
     width: 100%;
     height: 70px;
-}
+} */
 
 .title__city{
     align-items: center;
