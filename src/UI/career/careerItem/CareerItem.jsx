@@ -5,8 +5,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 const CareerItem = ({career}) => {
 
     const navigate = useNavigate()
-    console.log(career.id)
-
+    
   return (
     <div className={cl.card} onClick={() => {navigate('/careers/' + career.id)}}>
         <div className={cl.career__info}>
