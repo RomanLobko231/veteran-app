@@ -37,6 +37,7 @@
 }
 
 .text {
+    font-weight: 200;
     width: 95%;
     font-size: medium;
 }
