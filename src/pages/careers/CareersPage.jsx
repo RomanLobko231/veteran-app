@@ -6,8 +6,8 @@ const CareersPage = () => {
 
   return (
     <div className={cl.page}>
-      <h1>Вакансii</h1>
-      <p>Всого: {careers.length}</p>
+      <h1>Вакансiї</h1>
+      <p>Всього: {careers.length}</p>
       <CareersList careers={careers}/>
     </div>
   );

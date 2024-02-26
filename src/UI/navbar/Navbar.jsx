@@ -34,7 +34,7 @@ const Navbar = () => {
             <Link to="/main" onClick={handleShowNavbar}>Головна</Link>
             <Link to="/news" onClick={handleShowNavbar}>Новини</Link>
             {/* <Link to="/projects" onClick={handleShowNavbar}>Проекти</Link> */}
-            <Link to="/careers" onClick={handleShowNavbar}>Вакансii</Link>
+            <Link to="/careers" onClick={handleShowNavbar}>Вакансiї</Link>
         </nav>
       </nav>
   );

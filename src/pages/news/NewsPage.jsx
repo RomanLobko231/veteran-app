@@ -21,7 +21,7 @@ const NewsPage = () => {
   return (
     <div className={cl.page}>
       <h1>Новини</h1>
-      <p>Всого: {news.length}</p>
+      <p>Всього: {news.length}</p>
       {isLoading 
        ? <TailSpin
        visible={true}

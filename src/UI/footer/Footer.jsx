@@ -10,7 +10,7 @@ const Footer = () => {
         <nav className={cl.navigation}>
             <Link to="/news">Новини</Link>
             <Link to="/main">Головна</Link>
-            <Link to="/careers">Вакансii</Link>
+            <Link to="/careers">Кар'єра</Link>
         </nav>
         <p>© Copyright 2024</p>
         <p>Made by Roman Lobko</p>

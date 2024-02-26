@@ -9,7 +9,7 @@ const CareerComponent = () => {
 
   return (
     <div className={cl.career__container}>
-      <h1>Карера</h1>
+      <h1>Кар'єра</h1>
       <CareersList careers={careers}/>
       <button className={cl.button} onClick={() => navigate('/careers')}>Дiзнатися бiльше</button>
     </div>
