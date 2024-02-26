@@ -5,7 +5,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 const CareerItem = ({career}) => {
 
     const navigate = useNavigate()
-    
+
   return (
     <div className={cl.card} onClick={() => {navigate('/careers/' + career.id)}}>
         <div className={cl.career__info}>
@@ -14,7 +14,7 @@ const CareerItem = ({career}) => {
             <div className={cl.dot}/>
             <p>{career.city}</p>
       </div>
-      <p>{career.description}</p>
+      {/* <p>{career.description}</p> */}
     </div>
     <MdKeyboardArrowRight className={cl.icon}/>
     </div>

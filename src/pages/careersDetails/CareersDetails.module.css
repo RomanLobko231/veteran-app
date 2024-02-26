@@ -37,6 +37,11 @@
     font-size: medium;
 }
 
+.email h2{
+    margin: 0;
+    font-size: small;
+  }
+
 .description {
     width: 95%;
 }
