@@ -11,7 +11,7 @@ const NewsComponent = () => {
     const navigate = useNavigate();
     const [news, setNews] = useState([]);
     const [fetchNews, isLoading, error] = useApiCall( async () => {
-        const response = await NewsService.getAll();
+        const response = await NewsService.getLastThree();
         setNews(response.data)
     })
 
