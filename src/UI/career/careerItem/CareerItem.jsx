@@ -14,7 +14,6 @@ const CareerItem = ({career}) => {
             <div className={cl.dot}/>
             <p>{career.city}</p>
       </div>
-      {/* <p>{career.description}</p> */}
     </div>
     <MdKeyboardArrowRight className={cl.icon}/>
     </div>
