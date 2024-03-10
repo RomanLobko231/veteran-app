@@ -5,3 +5,9 @@
     gap: 20px;
     justify-content: center;
 }
+
+@media (max-width: 768px){
+    .news__list{
+        width: 90%;
+    }
+}
