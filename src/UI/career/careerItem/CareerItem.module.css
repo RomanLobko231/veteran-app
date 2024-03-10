@@ -41,7 +41,7 @@
 .title__city h1 {
     margin: 0;
     word-break: break-word;
-    font-size: xx-large;
+    font-size: x-large;
 }
 
 
@@ -71,9 +71,9 @@ color: #616161;
         margin: 0;
     }
     
-    .icon{
+    /* .icon{
         display: none;
-    }
+    } */
 
     .dot{
         display: none;
