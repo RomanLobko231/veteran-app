@@ -13,7 +13,6 @@ const NewsArticle = ({newsArticle}) => {
 
   return (
     <div className={cl.article__container}>
-     {/* <img src={newsArticle.photo} alt={newsArticle.title}/>  */}
      <h1>{newsArticle.title}</h1>
      <p className={cl.date}>{formattedCreatedDate}</p>
      <hr style={{width: '50%'}}/>

@@ -43,6 +43,7 @@
 .nav__links a {
     color: #3b3b3b;
     display: flex;
+    text-align: center;
     align-items: center;
     text-decoration: none;
     height: auto;

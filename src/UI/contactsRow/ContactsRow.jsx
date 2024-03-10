@@ -1,5 +1,4 @@
 import cl from './ContactsRow.module.css'
-import { IoIosMail } from "react-icons/io";
 import { TiMail } from "react-icons/ti";
 
 import { MdLocalPhone } from "react-icons/md";
