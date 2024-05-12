@@ -9,7 +9,7 @@ const Footer = () => {
         </h2>
         <nav className={cl.navigation}>
             <Link to="/main">Головна</Link>
-            <Link to="/news">Новини & iнформацiя</Link>
+            <Link to="/news">Корисна iнформацiя</Link>
             <Link to="/careers">Кар'єра</Link>
         </nav>
         <p>© Copyright 2024</p>

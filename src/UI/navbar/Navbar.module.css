@@ -112,7 +112,7 @@
         display: flex;
         justify-content: center;
         font-size: larger;
-        margin: 4% 0 4% 0;
+        margin: 7% 0 4% 0;
     }
 
     .navbar__text {
@@ -127,6 +127,6 @@
         flex-direction: column;
         justify-content: flex-start;
         margin-top: 20px;
-        font-size: xx-large;
+        font-size: x-large;
     }
 }
