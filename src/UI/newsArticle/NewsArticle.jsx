@@ -13,7 +13,7 @@ const NewsArticle = ({newsArticle}) => {
 
   return (
     <div className={cl.article__container}>
-     <h1>{newsArticle.title}</h1>
+     <h2>{newsArticle.title}</h2>
      <p className={cl.date}>{formattedCreatedDate}</p>
      <hr style={{width: '50%'}}/>
      <p style={{ whiteSpace: "pre-line" }} className={cl.text}>{newsArticle.content}</p>

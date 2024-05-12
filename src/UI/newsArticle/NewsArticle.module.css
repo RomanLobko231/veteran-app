@@ -33,7 +33,7 @@
     width: 90%;
 }
 
-.article__container h1{
+.article__container h2{
     text-align: center;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .article__container{
-    padding: 0 4px 0 4px;
+    padding: 0 8px 0 4px;
 
 }
 }
