@@ -10,7 +10,7 @@ const CareerItem = ({career}) => {
     <div className={cl.card} onClick={() => {navigate('/careers/' + career.id)}}>
         <div className={cl.career__info}>
       <div className={cl.title__city}>
-            <h1>{career.title}</h1>
+            <h3>{career.title}</h3>
             <div className={cl.dot}/>
             <p>{career.city}</p>
       </div>

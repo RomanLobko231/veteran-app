@@ -4,9 +4,11 @@ import { useEffect, useState } from 'react';
 import NewsService from '../../api/NewsService';
 import { useApiCall } from '../../hooks/useApiCall';
 import { TailSpin } from 'react-loader-spinner';
+import { useNavigate } from 'react-router-dom';
 
 const NewsPage = () => {
 
+    const navigate = useNavigate();
     const [news, setNews] = useState([]);
     const [fetchNews, isLoading, error] = useApiCall( async () => {
         const response = await NewsService.getAll();
@@ -20,8 +22,11 @@ const NewsPage = () => {
 
   return (
     <div className={cl.page}>
-      <h1>Новини</h1>
-      <p>Всього: {news.length}</p>
+      <div className={cl.info__choice}>
+        <p className={cl.title}>Новини</p>
+      <button className={cl.button} onClick={() => navigate('/documents')}>Документи</button>
+      </div>
+      <p>Всього новин: {news.length}</p>
       {isLoading 
        ? <TailSpin
        visible={true}

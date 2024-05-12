@@ -38,7 +38,7 @@
     gap: 10px;
 }
 
-.title__city h1 {
+.title__city h3 {
     margin: 0;
     word-break: break-word;
     font-size: x-large;
@@ -51,7 +51,7 @@ color: #616161;
 }
 
 .dot {
-    height: 10%;
+    height: 7%;
     aspect-ratio: 1;
     background-color: #353434;
     border-radius: 50%;

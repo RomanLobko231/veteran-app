@@ -1,6 +1,7 @@
 import { useState } from "react";
 import cl from "./Navbar.module.css"
 import { FaBars } from "react-icons/fa";
+import { GrClose } from "react-icons/gr";
 import { Link, useNavigate } from "react-router-dom";
 
 
@@ -29,11 +30,13 @@ const Navbar = () => {
         <div className={navbar_text.join(" ")}>
              <h2 onClick={() => {navigate('')}}>Romny Veteran Support</h2>
         </div>
-        <FaBars className={cl.nav__icon} onClick={() => setVisible(!visible)}/>
+        {visible
+        ? <GrClose className={cl.nav__icon__active} onClick={() => setVisible(!visible)}/>
+        : <FaBars className={cl.nav__icon} onClick={() => setVisible(!visible)}/>
+        }
         <nav className={navLinks.join(" ")}>
             <Link to="/main" onClick={handleShowNavbar}>Головна</Link>
-            <Link to="/news" onClick={handleShowNavbar}>Новини</Link>
-            {/* <Link to="/projects" onClick={handleShowNavbar}>Проекти</Link> */}
+            <Link to="/news" onClick={handleShowNavbar}>Корисна iнформацiя</Link>
             <Link to="/careers" onClick={handleShowNavbar}>Вакансiї</Link>
         </nav>
       </nav>

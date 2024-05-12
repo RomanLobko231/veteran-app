@@ -8,8 +8,8 @@ const Footer = () => {
             Romny Veteran Support
         </h2>
         <nav className={cl.navigation}>
-            <Link to="/news">Новини</Link>
             <Link to="/main">Головна</Link>
+            <Link to="/news">Новини & iнформацiя</Link>
             <Link to="/careers">Кар'єра</Link>
         </nav>
         <p>© Copyright 2024</p>

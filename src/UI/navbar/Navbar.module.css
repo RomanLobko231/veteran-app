@@ -50,7 +50,7 @@
     width: auto;
     font-size: larger;
     cursor: pointer;
-    margin-right: 2%;
+    margin-right: 3%;
 }
 
 
@@ -72,7 +72,7 @@
     }
 
     .navbar.active {
-        background: rgba(241, 249, 252, 0.30);
+        background: rgba(241, 249, 252, 0.70);
         backdrop-filter: blur(20px);
         z-index: 20;
         position: fixed;
@@ -90,7 +90,7 @@
     }
 
     .nav__links a {
-        margin-top: 4%;
+        margin-top: 7%;
         margin-right: 0;
         font-size: larger;
     }
@@ -99,6 +99,13 @@
         display: flex;
         min-width: 40px;
         min-height: 40px;
+    }
+
+    .nav__icon__active {
+        display: flex;
+        min-width: 40px;
+        min-height: 40px;
+        margin-top: 4%;
     }
 
     .navbar__text.active {

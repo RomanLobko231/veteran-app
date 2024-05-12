@@ -2,15 +2,25 @@
 
 
 @font-face {
-  font-family: "Light";   /*Can be any text*/
+  font-family: "Title";  
   src: local("e-UkraineHead-Regular"),
     url("./fonts/e_ukraine/e-UkraineHead-Regular.otf") format("opentype");
 }
 
+@font-face {
+  font-family: "Text";  
+  src: local("e-Ukraine-Regular"),
+    url("./fonts/e_ukraine/e-Ukraine-Regular.otf") format("opentype");
+}
+
 body{
-    font-family: 'Light';
+    font-family: "Text";
     background-color: rgba(214, 247, 255, 0.1);
     margin: 0 ;
+}
+
+body h1, h2, a {
+  font-family: 'Title';
 }
 
 button, input, textarea, select {
