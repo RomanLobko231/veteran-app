@@ -3,6 +3,8 @@ import cl from './DocumentsPage.module.css'
 import { TailSpin } from 'react-loader-spinner';
 import DocumentsService from '../../api/DocumentsService';
 import DocumentsList from '../../UI/documents/documentsList/DocumentsList';
+import { useEffect, useState } from 'react';
+import { useApiCall } from '../../hooks/useApiCall';
 
 const DocumentsPage = () => {
 
