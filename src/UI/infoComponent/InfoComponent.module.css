@@ -1,4 +1,4 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,7 +8,7 @@
     width: 95%;
 }
 
-.container h1{
+.container h1 {
     margin-bottom: 0;
     max-width: 80%;
     text-align: center;
@@ -18,40 +18,41 @@
     border-radius: 18px;
 }
 
-.date{
+.date {
     color: #7c7c7c;
     font-size: smaller;
 }
 
-.description{
+.description {
     color: #363636;
     word-wrap: break-word;
     width: 60%;
 }
 
 
-@media (max-width: 1050px){
-.container img{
-    border-radius: 12px;
-    width: 90%;
-}
+@media (max-width: 1050px) {
+    .container img {
+        border-radius: 12px;
+        width: 90%;
+    }
 
-.container h1{
-    text-align: center;
-}
+    .container h1 {
+        max-width: 95%;
+        word-break: break-word;
+    }
 
-.description {
-    font-weight: 200;
-    width: 95%;
-    font-size: medium;
-}
+    .description {
+        font-weight: 200;
+        width: 95%;
+        font-size: medium;
+    }
 
-.date{
-    font-size: xx-small;
-}
+    .date {
+        font-size: xx-small;
+    }
 
-.container{
-    padding: 0 4px 0 4px;
+    .container {
+        padding: 0 4px 0 4px;
 
-}
+    }
 }
