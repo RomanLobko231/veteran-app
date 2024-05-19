@@ -25,6 +25,7 @@ const DocumentsPage = () => {
                 <button className={cl.button} onClick={() => navigate('/news')}>Новини</button>
                 <p className={cl.title}>Документи</p>
             </div>
+            <p>Всього документiв: {documents.length}</p>
             {isLoading
                     ? <TailSpin
                         visible={true}

@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
     <ScrollToTop>
     <Navbar/>
-    <div style={{minHeight: '100vh', marginTop: '90px'}}>
+    <div style={{minHeight: '100vh', marginTop: '90px', width: '95%'}}>
           <AppRouter/>
     </div>
     <Footer/>
