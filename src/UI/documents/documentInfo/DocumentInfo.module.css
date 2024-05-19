@@ -1,0 +1,62 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: antiquewhite;
+    border-radius: 30px;
+    padding: 1%;
+    width: auto;
+    cursor: pointer;
+box-shadow: inset 0 0 0 0 #fcd0c2;
+-webkit-transition: ease-out 0.3s;
+-moz-transition: ease-out 0.3s;
+transition: ease-out 0.3s;
+font-size: larger;
+}
+
+.icon{
+    display: none;
+}
+
+
+.button p{
+    margin: 0;
+    display: flex;
+    font-size: medium;
+    color: #7c7c7c;
+}
+
+.button:hover{
+    box-shadow: inset 400px 0 0 0 #2c425f;
+}
+
+.button:hover p,
+    .download:hover .icon {
+    color: #fcd0c2;
+}
+
+@media (max-width: 768px){
+    .button p{
+        font-size: x-small;
+    }
+
+    .button{
+        padding: 1% 2% 1% 2%;
+    }
+
+    .icon{
+        display: flex;
+        height: auto;
+        width: auto;
+    }
+
+}

@@ -7,8 +7,9 @@ export const useApiCall = (callback) => {
     const fetching = async (...args) => {
         try {
             setIsLoading(true)
-            await callback(...args)
             setError('')
+            const result = await callback(...args)
+            return result;
         } catch (error) {
             setIsLoading(false)
             error.response ? setError(error.response.data) : setError("Unknown error");

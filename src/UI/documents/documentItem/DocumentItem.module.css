@@ -1,0 +1,125 @@
+
+.card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 1.5%;
+    border-radius: 18px;
+    justify-content: space-between;
+}
+
+.document__info{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 90%;
+    height: 100%;
+}
+
+.card:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.icon{
+    height: 100%;
+    width: 100%;
+    color: #7c7c7c;
+
+}
+
+.title__date{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.title__date p{
+ font-size: smaller;
+ color: #7c7c7c;
+}
+
+.title__date p, h3{
+    margin: 0;
+}
+
+.download {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 3%;
+    background: antiquewhite;
+    border-radius: 50%;
+    padding: 1%;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #fcd0c2;
+    transition: ease-out 0.3s;
+}
+
+.download p {
+    display: none;
+}
+
+.download:hover{
+    box-shadow: inset 400px 0 0 0 #2c425f;
+}
+
+.download:hover p,
+    .download:hover .icon {
+    color: #fcd0c2;
+}
+
+
+@media (max-width: 768px){
+    .card{
+        padding: 3%;
+        width: 90%;
+    }
+
+    .download{
+        background: antiquewhite;
+        border-radius: 18px;
+        padding: 1% 2% 1% 2%;
+        margin-top: 3%;
+        width: auto;
+        cursor: pointer;
+    box-shadow: inset 0 0 0 0 #fcd0c2;
+    -webkit-transition: ease-out 0.3s;
+    -moz-transition: ease-out 0.3s;
+    transition: ease-out 0.3s;
+    font-size: larger;
+    }
+
+
+    .icon{
+        height: auto;
+        width: auto;
+    }
+
+    .download p{
+        margin: 0;
+        display: flex;
+        font-size: x-small;
+        color: #7c7c7c;
+    }
+
+    .title__date p {
+        margin: 0;
+        font-size: xx-small;
+    }
+
+    .title__date h3 {
+        font-size: smaller;
+    }
+
+    .document__info{
+         width: 100%;
+    }
+
+    
+}

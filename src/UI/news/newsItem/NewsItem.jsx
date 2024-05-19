@@ -6,7 +6,7 @@ const NewsItem = ({ news }) => {
 
     const navigate = useNavigate();
 
-    const formattedCreatedDate = news.date == null ? "null" : new Date(news.date).toLocaleString('en-UK', {
+    const formattedCreatedDate = news.date == null ? " " : new Date(news.date).toLocaleString('en-UK', {
         year: 'numeric',
         month: '2-digit',
         day: '2-digit',

@@ -13,7 +13,6 @@ const NewsDetailsPage = () => {
     const [newsArticle, setNewsArticle] = useState(null);
     const [fetchNewsArticle, isLoading, error] = useApiCall( async () => {
         const response = await NewsService.getById(params.id);
-        console.log(response.data)
         setNewsArticle(response.data)
     })
 
@@ -37,10 +36,10 @@ const NewsDetailsPage = () => {
             visible={true}
             height="50"
             width="50"
-            color="#4285f4"
+            color="#2c425f"
             ariaLabel="tail-spin-loading"
             radius="1"
-            wrapperStyle={{ marginTop: '10%' }}
+            wrapperStyle={{ marginTop: '15%' }}
             wrapperClass="" />
             : <NewsArticle newsArticle={newsArticle}/>
         }

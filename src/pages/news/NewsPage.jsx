@@ -32,13 +32,12 @@ const NewsPage = () => {
        visible={true}
        height="50"
        width="50"
-       color="#4285f4"
+       color="#2c425f"
        ariaLabel="tail-spin-loading"
        radius="1"
-       wrapperStyle={{ marginTop: '5%' }}
+       wrapperStyle={{ marginTop: '15%' }}
        wrapperClass="" />
        : <NewsList news={news}/>
-
        }
     </div>
   );
