@@ -8,7 +8,8 @@ import { useEffect, useState } from 'react';
 
 const DocumentInfo = ({ downloadedFile }) => {
 
-    const [displayFile, setDisplayFile] = useState(null);
+    const [displayFile, setDisplayFile] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
     const downloadFile = () => {
         const link = document.createElement('a');
@@ -19,19 +20,15 @@ const DocumentInfo = ({ downloadedFile }) => {
         document.body.removeChild(link);
     }
 
-    const base64ToBlob = (base64, mimeType) => {
-        const byteCharacters = atob(base64);
-        const byteNumbers = new Array(byteCharacters.length);
-        for (let i = 0; i < byteCharacters.length; i++) {
-            byteNumbers[i] = byteCharacters.charCodeAt(i);
-        }
-        const byteArray = new Uint8Array(byteNumbers);
-        return new Blob([byteArray], { type: mimeType });
+    const base64ToBlob = async () => {
+        const file = await fetch(`data:${downloadedFile.mime_type};base64,${downloadedFile.file}`)
+        const blob = await file.blob();
+        return blob;
     }
 
     useEffect(async () => {
-        const file = await fetch(`data:${downloadedFile.mime_type};base64,${downloadedFile.file}`)
-        const blob = await file.blob();
+
+        const blob  = base64ToBlob();
         setDisplayFile(blob);
     }, []);
 
@@ -42,9 +39,11 @@ const DocumentInfo = ({ downloadedFile }) => {
                 <TbFileDownload className={cl.icon} />
                 <p>Завантажити файл</p>
             </div>
-            <div>
+            {isLoading
+            ? <h1>Loading</h1>
+            :<div>
                 <DocViewer
-                    document={
+                    documents ={
                         {
                             uri: window.URL.createObjectURL(displayFile),
                             fileName: downloadedFile.name
@@ -53,6 +52,8 @@ const DocumentInfo = ({ downloadedFile }) => {
                     pluginRenderers={DocViewerRenderers}
                 />
             </div>
+            }
+            
         </div>
     );
 };
