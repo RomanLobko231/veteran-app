@@ -8,10 +8,11 @@
     width: 95%;
 }
 
-.container h1 {
+.container h2 {
     margin-bottom: 0;
     max-width: 80%;
     text-align: center;
+    font-size: xx-large;
 }
 
 .container img {
@@ -36,19 +37,18 @@
         width: 90%;
     }
 
-    .container h1 {
+    .container h2 {
         max-width: 95%;
         word-break: break-word;
     }
 
     .description {
-        font-weight: 200;
-        width: 95%;
+        width: 98%;
         font-size: medium;
     }
 
     .date {
-        font-size: xx-small;
+        font-size: x-small;
     }
 
     .container {
