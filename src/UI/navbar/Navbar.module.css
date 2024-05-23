@@ -99,8 +99,8 @@
 
     .nav__icon {
         display: flex;
-        min-width: 40px;
-        min-height: 40px;
+        min-width: 30px;
+        min-height: 30px;
     }
 
     .nav__icon__active {
