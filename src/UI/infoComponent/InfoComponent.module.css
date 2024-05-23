@@ -40,6 +40,7 @@
     .container h2 {
         max-width: 95%;
         word-break: break-word;
+        font-size: x-large;
     }
 
     .description {
