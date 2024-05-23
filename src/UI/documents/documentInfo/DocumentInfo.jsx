@@ -50,7 +50,7 @@ const DocumentInfo = ({ downloadedFile }) => {
             <div>
                 <DocViewer
                     documents ={
-                        
+                        docs
                     }
                     pluginRenderers={DocViewerRenderers}
                 />
