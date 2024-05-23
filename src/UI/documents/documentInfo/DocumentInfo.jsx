@@ -29,8 +29,9 @@ const DocumentInfo = ({ downloadedFile }) => {
         return new Blob([byteArray], { type: mimeType });
     }
 
-    useEffect(() => {
-        const blob = base64ToBlob(downloadedFile.file, downloadedFile.mime_type);
+    useEffect(async () => {
+        const file = await fetch(`data:${downloadedFile.mime_type};base64,${downloadedFile.file}`)
+        const blob = await file.blob();
         setDisplayFile(blob);
     }, []);
 
