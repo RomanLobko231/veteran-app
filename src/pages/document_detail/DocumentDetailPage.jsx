@@ -11,14 +11,13 @@ const DocumentDetailPage = () => {
     const params = useParams();
     const [document, setDocument] = useState({});
     const [fetchDocument, isLoading, error] = useApiCall( async () => {
-        const response = await DocumentsService.getDocumentById(params.id).then((resposne) => {console.log(resposne.data)});
-        console.log(response.data)
-        setDocument(response.data)
+        const response = await DocumentsService.getDocumentById(params.id);
+        return response.data;
     })
 
     
     useEffect(() => {
-            fetchDocument();
+           setDocument(fetchDocument());
     }, [])
 
 
