@@ -12,7 +12,6 @@ const DocumentInfo = ({ downloadedFile }) => {
     const [docs, setDocs] = useState([]);
 
     const downloadFile = () => {
-        console.log(`data:${downloadedFile.mime_type};base64,${downloadedFile.file}`)
         const link = document.createElement('a');
         link.href = `data:${downloadedFile.mime_type};base64,${downloadedFile.file}`;
         link.download = downloadedFile.title;
@@ -21,13 +20,27 @@ const DocumentInfo = ({ downloadedFile }) => {
         document.body.removeChild(link);
     }
 
-    const base64ToBlob = () => {
-       window.atob(downloadedFile.file)
-    }
 
-    useEffect(() => {
+//     const showDoc = () => {
+//         // Decode the Base64 string
+//     const byteCharacters = atob(downloadedFile.file);
 
-    }, []);
+//     // Create an array for each byte
+//     const byteNumbers = new Array(downloadedFile.file.length);
+//     for (let i = 0; i < downloadedFile.file.length; i++) {
+//         byteNumbers[i] = downloadedFile.file.charCodeAt(i);
+//     }
+
+//     // Convert the array to a Uint8Array
+//     const byteArray = new Uint8Array(byteNumbers);
+
+//     // Create a Blob from the Uint8Array
+//    const blob = new Blob([byteArray], { type: downloadedFile.mime_type });
+//     const blobUrl = window.URL.createObjectURL(blob);
+//     console.log(blobUrl)
+
+//         setDocs([...docs, {uri: blobUrl, fileType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'}])
+//     }
 
     return (
         <div className={cl.page}>
@@ -36,7 +49,7 @@ const DocumentInfo = ({ downloadedFile }) => {
                 <TbFileDownload className={cl.icon} />
                 <p>Завантажити файл</p>
             </div>
-            <div>
+            {/* <div>
                 <DocViewer
                     documents ={
                         docs
@@ -45,7 +58,7 @@ const DocumentInfo = ({ downloadedFile }) => {
                 />
             </div>
     
-            
+             */}
         </div>
     );
 };
