@@ -12,6 +12,7 @@ const DocumentInfo = ({ downloadedFile }) => {
     const [docs, setDocs] = useState([]);
 
     const downloadFile = () => {
+        console.log(`data:${downloadedFile.mime_type};base64,${downloadedFile.file}`)
         const link = document.createElement('a');
         link.href = `data:${downloadedFile.mime_type};base64,${downloadedFile.file}`;
         link.download = downloadedFile.title;
