@@ -32,7 +32,8 @@ const DocumentInfo = ({ downloadedFile }) => {
     useEffect(async () => {
 
         const blob  = base64ToBlob();
-        setDisplayFile(blob);
+       const file =  window.URL.createObjectURL(blob);
+        setDisplayFile(file);
     }, []);
 
     return (
@@ -48,7 +49,7 @@ const DocumentInfo = ({ downloadedFile }) => {
                 <DocViewer
                     documents ={
                         {
-                            uri: window.URL.createObjectURL(displayFile),
+                            uri: displayFile,
                             fileName: downloadedFile.name
                         }
                     }
