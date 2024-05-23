@@ -4,6 +4,8 @@ import InfoComponent from '../../infoComponent/InfoComponent';
 import cl from './DocumentInfo.module.css'
 import { TbFileDownload } from "react-icons/tb";
 import { useEffect, useState } from 'react';
+import DocumentsService from '../../../api/DocumentsService';
+import { useApiCall } from '../../../hooks/useApiCall';
 
 
 const DocumentInfo = ({ downloadedFile }) => {
@@ -11,7 +13,7 @@ const DocumentInfo = ({ downloadedFile }) => {
     const [displayFile, setDisplayFile] = useState('');
     const [docs, setDocs] = useState([]);
 
-    const downloadFile = () => {
+    const downloadFil = () => {
         const link = document.createElement('a');
         link.href = `data:${downloadedFile.mime_type};base64,${downloadedFile.file}`;
         link.download = downloadedFile.title;
@@ -19,6 +21,10 @@ const DocumentInfo = ({ downloadedFile }) => {
         link.click();
         document.body.removeChild(link);
     }
+
+    const [downloadFile, isFileLoading, errors] = useApiCall( (id) => {
+        DocumentsService.downloadFIleById(id);
+   })
 
 
 //     const showDoc = () => {
