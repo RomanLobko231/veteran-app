@@ -51,7 +51,7 @@ const DocumentInfo = ({ downloadedFile }) => {
     return (
         <div className={cl.page}>
             <InfoComponent title={downloadedFile.title} date={downloadedFile.date} description={downloadedFile.description} />
-            <div className={cl.button} onClick={downloadFile(downloadedFile.id)}>
+            <div className={cl.button} onClick={() => {downloadFile(downloadedFile.id)}}>
                 <TbFileDownload className={cl.icon} />
                 <p>Завантажити файл</p>
             </div>
