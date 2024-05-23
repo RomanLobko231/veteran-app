@@ -10,9 +10,11 @@ const DocumentDetailPage = () => {
 
     const params = useParams();
     const [document, setDocument] = useState({});
-    const [fetchDocument, isLoading, error] = useApiCall( async () => {
-        const response = await DocumentsService.getDocumentById(params.id);
+    const [fetchDocument, isLoading, error] = useApiCall( () => {
+        const response = DocumentsService.getDocumentById(params.id);
         setDocument(response.data)
+        console.log(response.data)
+
     })
 
     
