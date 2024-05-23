@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 const DocumentInfo = ({ downloadedFile }) => {
 
     const [displayFile, setDisplayFile] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
+    const [docs, setDocs] = useState([]);
 
     const downloadFile = () => {
         const link = document.createElement('a');
@@ -21,19 +21,23 @@ const DocumentInfo = ({ downloadedFile }) => {
     }
 
     const base64ToBlob = async () => {
-        console.log(downloadedFile.file)
-        const file = await fetch(`data:${downloadedFile.mime_type};base64,${downloadedFile.file}`)
-        console.log(file)
-        const blob = await file.blob();
-        console.log(blob)
-        return blob;
+        console.log(downloadedFile)
+        // const file = await fetch(`data:${downloadedFile.mime_type};base64,${downloadedFile.file}`)
+        // console.log(file)
+        // const blob = await file.blob();
+        // console.log(blob)
+        // return blob;
     }
 
     useEffect(async () => {
 
         const blob  = base64ToBlob();
-       const file =  window.URL.createObjectURL(blob);
-        setDisplayFile(file);
+        // const file =  window.URL.createObjectURL(blob);
+        // setDocs([...docs, {
+        //     uri: file,
+        //     fileName: downloadedFile.title,
+        //     fileType: '.docx'
+        // }])
     }, []);
 
     return (
@@ -43,20 +47,15 @@ const DocumentInfo = ({ downloadedFile }) => {
                 <TbFileDownload className={cl.icon} />
                 <p>Завантажити файл</p>
             </div>
-            {isLoading
-            ? <h1>Loading</h1>
-            :<div>
+            <div>
                 <DocViewer
                     documents ={
-                        {
-                            uri: displayFile,
-                            fileName: downloadedFile.title
-                        }
+                        
                     }
                     pluginRenderers={DocViewerRenderers}
                 />
             </div>
-            }
+    
             
         </div>
     );
