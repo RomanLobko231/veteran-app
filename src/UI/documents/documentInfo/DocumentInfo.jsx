@@ -20,7 +20,7 @@ const DocumentInfo = ({ downloadedFile }) => {
         document.body.removeChild(link);
     }
 
-    const base64ToBlob = async () => {
+    const base64ToBlob = () => {
         console.log(downloadedFile)
         // const file = await fetch(`data:${downloadedFile.mime_type};base64,${downloadedFile.file}`)
         // console.log(file)
@@ -29,7 +29,7 @@ const DocumentInfo = ({ downloadedFile }) => {
         // return blob;
     }
 
-    useEffect(async () => {
+    useEffect(() => {
 
         const blob  = base64ToBlob();
         // const file =  window.URL.createObjectURL(blob);
@@ -43,7 +43,7 @@ const DocumentInfo = ({ downloadedFile }) => {
     return (
         <div className={cl.page}>
             <InfoComponent title={downloadedFile.title} date={downloadedFile.date} description={downloadedFile.description} />
-            <div className={cl.button} onClick={downloadFile}>
+            <div className={cl.button} onClick={base64ToBlob}>
                 <TbFileDownload className={cl.icon} />
                 <p>Завантажити файл</p>
             </div>
