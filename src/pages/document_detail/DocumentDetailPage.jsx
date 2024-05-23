@@ -12,12 +12,12 @@ const DocumentDetailPage = () => {
     const [document, setDocument] = useState({});
     const [fetchDocument, isLoading, error] = useApiCall( async () => {
         const response = await DocumentsService.getDocumentById(params.id);
-        return response.data;
+        setDocument(response.data)
     })
 
     
     useEffect(() => {
-           setDocument(fetchDocument());
+            fetchDocument();
     }, [])
 
 
