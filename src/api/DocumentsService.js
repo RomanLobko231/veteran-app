@@ -8,8 +8,11 @@ export default class DocumentsService {
     }
 
     static async getDocumentById(id) {
-        const response = await api.get('/documents/' + id);
-        console.log(response.data)
+        const response = await api.get('/documents/' + id)
+        .then((response) => {
+            console.log(response.data)
+            return response;
+        });
         return response;
      } 
 

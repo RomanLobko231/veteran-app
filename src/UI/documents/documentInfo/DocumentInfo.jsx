@@ -21,7 +21,7 @@ const DocumentInfo = ({ downloadedFile }) => {
     }
 
     const base64ToBlob = () => {
-       
+       window.atob(downloadedFile.file)
     }
 
     useEffect(() => {
