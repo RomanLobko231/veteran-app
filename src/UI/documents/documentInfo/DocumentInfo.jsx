@@ -45,8 +45,8 @@ const DocumentInfo = ({ downloadedFile }) => {
                 <DocViewer
                     document={
                         {
-                            uri: window.URL.createObjectURL(file),
-                            fileName: file.name
+                            uri: window.URL.createObjectURL(displayFile),
+                            fileName: downloadedFile.name
                         }
                     }
                     pluginRenderers={DocViewerRenderers}
