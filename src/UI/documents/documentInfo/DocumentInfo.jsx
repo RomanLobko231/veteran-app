@@ -50,7 +50,7 @@ const DocumentInfo = ({ downloadedFile }) => {
                     documents ={
                         {
                             uri: displayFile,
-                            fileName: downloadedFile.name
+                            fileName: downloadedFile.title
                         }
                     }
                     pluginRenderers={DocViewerRenderers}
