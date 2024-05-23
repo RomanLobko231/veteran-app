@@ -21,8 +21,11 @@ const DocumentInfo = ({ downloadedFile }) => {
     }
 
     const base64ToBlob = async () => {
+        console.log(downloadedFile.file)
         const file = await fetch(`data:${downloadedFile.mime_type};base64,${downloadedFile.file}`)
+        console.log(file)
         const blob = await file.blob();
+        console.log(blob)
         return blob;
     }
 
