@@ -22,18 +22,29 @@ const DocumentInfo = ({ downloadedFile }) => {
     }
 
     const base64ToBlob = () => {
-        console.log(downloadedFile)
-        // const file = await fetch(`data:${downloadedFile.mime_type};base64,${downloadedFile.file}`)
-        // console.log(file)
-        // const blob = await file.blob();
-        // console.log(blob)
-        // return blob;
+        const dataURI = `data:${downloadedFile.mime_type};base64,${downloadedFile.file}`;
+        var byteString = atob(dataURI.split(',')[1]);
+
+    // separate out the mime component
+    var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+
+    // write the bytes of the string to an ArrayBuffer
+    var ab = new ArrayBuffer(byteString.length);
+    var ia = new Uint8Array(ab);
+    for (var i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+    }
+
+    // write the ArrayBuffer to a blob, and you're done
+    var bb = new Blob([ab]);
+    return bb;
     }
 
     useEffect(() => {
 
         const blob  = base64ToBlob();
-        // const file =  window.URL.createObjectURL(blob);
+        console.log(blob);
+        const file =  window.URL.createObjectURL(blob);
         // setDocs([...docs, {
         //     uri: file,
         //     fileName: downloadedFile.title,
