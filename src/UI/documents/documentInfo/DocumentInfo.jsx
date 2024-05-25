@@ -12,8 +12,6 @@ const DocumentInfo = ({ downloadedFile }) => {
 
     const [displayFile, setDisplayFile] = useState('');
     const [docs, setDocs] = useState([]);
-    const [selectedDocs, setSelectedDocs] = useState([]);
-
 
     const downloadFile = () => {
         console.log(downloadedFile)
@@ -36,13 +34,13 @@ const DocumentInfo = ({ downloadedFile }) => {
             }
             return bytes.buffer;
         }
-
+        
         // Convert base64 to ArrayBuffer
-        const arrayBuffer = base64ToArrayBuffer(downloadedFile.file);
-
+        const arrayBuffer = base64ToArrayBuffer(dow);
+        
         // Create a Blob from the ArrayBuffer
         const blob = new Blob([arrayBuffer], { type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" });
-
+        
         // Create an Object URL
         const url = URL.createObjectURL(blob);
 
@@ -70,28 +68,18 @@ const DocumentInfo = ({ downloadedFile }) => {
     return (
         <div className={cl.page}>
             <InfoComponent title={downloadedFile.title} date={downloadedFile.date} description={downloadedFile.description} />
-            <div className={cl.button} onClick={showDoc}>
+            <div className={cl.button} onClick={downloadFile}>
                 <TbFileDownload className={cl.icon} />
                 <p>Завантажити файл</p>
             </div>
-            <div>
-                <input
-                    type="file"
-                    accept=".docx"
-                    multiple
-                    onChange={(el) =>
-                        el.target.files?.length &&
-                        setSelectedDocs(Array.from(el.target.files))
-                    }
-                />
+            {/* <div>
                 <DocViewer
-                    documents={selectedDocs.map((file) => ({
-                        uri: window.URL.createObjectURL(file),
-                        fileName: file.name,
-                    }))}
+                    documents={
+                        docs
+                    }
                     pluginRenderers={DocViewerRenderers}
                 />
-            </div>
+            </div> */}
         </div>
     );
 };
