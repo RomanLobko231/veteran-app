@@ -26,13 +26,27 @@ const DocumentInfo = ({ downloadedFile }) => {
     const [pdfUrl, setPdfUrl] = useState(null);
 
     const showDoc = () => {
-            const blob = new Blob([new Uint8Array(downloadedFile.file)], { type: 'application/pdf' });
 
-            // Create an object URL for the Blob
-            const url = URL.createObjectURL(blob);
+        function base64ToArrayBuffer(base64) {
+            const binaryString = atob(base64);
+            const len = binaryString.length;
+            const bytes = new Uint8Array(len);
+            for (let i = 0; i < len; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+            return bytes.buffer;
+        }
 
-            // Set the URL to state
-            setPdfUrl(url);
+        const arrayBuffer = base64ToArrayBuffer(downloadedFile.file);
+
+
+        const blob = new Blob([arrayBuffer], { type: 'application/pdf' });
+
+        // Create an object URL for the Blob
+        const url = URL.createObjectURL(blob);
+
+        // Set the URL to state
+        setPdfUrl(url);
     }
 
 
