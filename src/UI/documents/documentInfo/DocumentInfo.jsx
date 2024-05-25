@@ -114,7 +114,8 @@ const DocumentInfo = ({ downloadedFile }) => {
                 <p>Завантажити файл</p>
             </div>
             {pdfUrl 
-                ? <TailSpin
+                ? <iframe src={pdfUrl} className={cl.doc__display}></iframe>
+                : <TailSpin
                 visible={true}
                 height="50"
                 width="50"
@@ -123,7 +124,6 @@ const DocumentInfo = ({ downloadedFile }) => {
                 radius="1"
                 wrapperStyle={{ marginTop: '5%' }}
                 wrapperClass="" />
-                : <iframe src={pdfUrl} className={cl.doc__display}></iframe>
             }
         </div>
     );
