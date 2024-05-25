@@ -45,7 +45,8 @@ const DocumentInfo = ({ downloadedFile }) => {
                 <p>Завантажити файл</p>
             </div>
             {pdfUrl 
-                ? <iframe src={pdfUrl} className={cl.doc__display}></iframe>
+                ? <DocViewer documents={[{uri: pdfUrl}]} pluginRenderers={DocViewerRenderers} />
+                //<iframe src={pdfUrl} className={cl.doc__display}></iframe>
                 : <TailSpin
                 visible={true}
                 height="50"
