@@ -23,6 +23,26 @@ const DocumentInfo = ({ downloadedFile }) => {
         document.body.removeChild(link);
     }
 
+    const [pdfUrl, setPdfUrl] = useState(null);
+
+    useEffect(() => {
+        console.log(downloadedFile)
+        if (downloadedFile.file) {
+            // Convert byte array to Blob
+            const blob = new Blob([new Uint8Array(downloadedFile.file)], { type: 'application/pdf' });
+
+            // Create an object URL for the Blob
+            const url = URL.createObjectURL(blob);
+
+            // Set the URL to state
+            setPdfUrl(url);
+
+            // Clean up the URL object when the component unmounts
+            return () => URL.revokeObjectURL(url);
+        }
+    }, [downloadedFile.file]);
+
+
 
     // const showDoc = () => {
     //     function base64ToArrayBuffer(base64) {
@@ -34,13 +54,13 @@ const DocumentInfo = ({ downloadedFile }) => {
     //         }
     //         return bytes.buffer;
     //     }
-        
+
     //     // Convert base64 to ArrayBuffer
     //     const arrayBuffer = base64ToArrayBuffer(dow);
-        
+
     //     // Create a Blob from the ArrayBuffer
     //     const blob = new Blob([arrayBuffer], { type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" });
-        
+
     //     // Create an Object URL
     //     const url = URL.createObjectURL(blob);
 
@@ -72,14 +92,13 @@ const DocumentInfo = ({ downloadedFile }) => {
                 <TbFileDownload className={cl.icon} />
                 <p>Завантажити файл</p>
             </div>
-            {/* <div>
-                <DocViewer
-                    documents={
-                        docs
-                    }
-                    pluginRenderers={DocViewerRenderers}
-                />
-            </div> */}
+            <div>
+                {pdfUrl ? (
+                    <iframe src={pdfUrl} width="100%" height="600px"></iframe>
+                ) : (
+                    <p>Loading PDF...</p>
+                )}
+            </div>
         </div>
     );
 };
