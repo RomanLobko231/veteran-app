@@ -12,7 +12,6 @@ import { TailSpin } from 'react-loader-spinner';
 const DocumentInfo = ({ downloadedFile }) => {
 
     const [pdfUrl, setPdfUrl] = useState(null);
-
     const [downloadFile, isFileLoading, errors] = useApiCall( (id) => {
         DocumentsService.downloadFIleById(id);
    })
@@ -46,7 +45,7 @@ const DocumentInfo = ({ downloadedFile }) => {
                 <p>Завантажити файл</p>
             </div>
             {pdfUrl 
-                ? <iframe name={downloadedFile.title} src={pdfUrl} className={cl.doc__display}></iframe>
+                ? <iframe src={pdfUrl} className={cl.doc__display}></iframe>
                 : <TailSpin
                 visible={true}
                 height="50"
