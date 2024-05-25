@@ -50,7 +50,7 @@ const DocumentInfo = ({ downloadedFile }) => {
         const url = URL.createObjectURL(blob);
         setPdfUrl(url);
         }
-    }, [])
+    }, [downloadedFile.file])
 
 
     const base64ToArrayBuffer = () => {
