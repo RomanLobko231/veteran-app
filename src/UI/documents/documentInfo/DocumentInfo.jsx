@@ -14,6 +14,7 @@ const DocumentInfo = ({ downloadedFile }) => {
     const [docs, setDocs] = useState([]);
 
     const downloadFil = () => {
+        console.log(downloadedFile)
         const link = document.createElement('a');
         link.href = `data:${downloadedFile.mime_type};base64,${downloadedFile.file}`;
         link.download = downloadedFile.title;
@@ -51,7 +52,7 @@ const DocumentInfo = ({ downloadedFile }) => {
     return (
         <div className={cl.page}>
             <InfoComponent title={downloadedFile.title} date={downloadedFile.date} description={downloadedFile.description} />
-            <div className={cl.button} onClick={() => {downloadFile(downloadedFile.id)}}>
+            <div className={cl.button} onClick={downloadFil}>
                 <TbFileDownload className={cl.icon} />
                 <p>Завантажити файл</p>
             </div>
