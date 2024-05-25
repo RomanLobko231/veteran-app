@@ -12,6 +12,8 @@ const DocumentInfo = ({ downloadedFile }) => {
 
     const [displayFile, setDisplayFile] = useState('');
     const [docs, setDocs] = useState([]);
+    const [selectedDocs, setSelectedDocs] = useState([]);
+
 
     const downloadFile = () => {
         console.log(downloadedFile)
@@ -34,13 +36,13 @@ const DocumentInfo = ({ downloadedFile }) => {
             }
             return bytes.buffer;
         }
-        
+
         // Convert base64 to ArrayBuffer
         const arrayBuffer = base64ToArrayBuffer(downloadedFile.file);
-        
+
         // Create a Blob from the ArrayBuffer
         const blob = new Blob([arrayBuffer], { type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" });
-        
+
         // Create an Object URL
         const url = URL.createObjectURL(blob);
 
@@ -73,10 +75,20 @@ const DocumentInfo = ({ downloadedFile }) => {
                 <p>Завантажити файл</p>
             </div>
             <div>
-                <DocViewer
-                    documents={
-                        docs
+                <input
+                    type="file"
+                    accept=".docx"
+                    multiple
+                    onChange={(el) =>
+                        el.target.files?.length &&
+                        setSelectedDocs(Array.from(el.target.files))
                     }
+                />
+                <DocViewer
+                    documents={selectedDocs.map((file) => ({
+                        uri: window.URL.createObjectURL(file),
+                        fileName: file.name,
+                    }))}
                     pluginRenderers={DocViewerRenderers}
                 />
             </div>
