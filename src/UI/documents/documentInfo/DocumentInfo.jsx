@@ -6,6 +6,7 @@ import { TbFileDownload } from "react-icons/tb";
 import { useEffect, useState } from 'react';
 import DocumentsService from '../../../api/DocumentsService';
 import { useApiCall } from '../../../hooks/useApiCall';
+import { TailSpin } from 'react-loader-spinner';
 
 
 const DocumentInfo = ({ downloadedFile }) => {
@@ -27,7 +28,23 @@ const DocumentInfo = ({ downloadedFile }) => {
     const [isLoading, setIsLoading] = useState(true);
 
     const showDoc = () => {
-        setIsLoading(true)
+        // function base64ToArrayBuffer(base64) {
+        //     const binaryString = atob(base64);
+        //     const len = binaryString.length;
+        //     const bytes = new Uint8Array(len);
+        //     for (let i = 0; i < len; i++) {
+        //         bytes[i] = binaryString.charCodeAt(i);
+        //     }
+        //     return bytes.buffer;
+        // }
+
+        // const arrayBuffer = base64ToArrayBuffer(downloadedFile.file);
+        // const blob = new Blob([arrayBuffer], { type: 'application/pdf' });
+        // const url = URL.createObjectURL(blob);
+        // setPdfUrl(url);
+    }
+
+    useEffect(() => {
         function base64ToArrayBuffer(base64) {
             const binaryString = atob(base64);
             const len = binaryString.length;
@@ -42,27 +59,7 @@ const DocumentInfo = ({ downloadedFile }) => {
         const blob = new Blob([arrayBuffer], { type: 'application/pdf' });
         const url = URL.createObjectURL(blob);
         setPdfUrl(url);
-        setIsLoading(false)
-    }
-
-    // useEffect(() => {
-    //     setIsLoading(true)
-    //     function base64ToArrayBuffer(base64) {
-    //         const binaryString = atob(base64);
-    //         const len = binaryString.length;
-    //         const bytes = new Uint8Array(len);
-    //         for (let i = 0; i < len; i++) {
-    //             bytes[i] = binaryString.charCodeAt(i);
-    //         }
-    //         return bytes.buffer;
-    //     }
-
-    //     const arrayBuffer = base64ToArrayBuffer(downloadedFile.file);
-    //     const blob = new Blob([arrayBuffer], { type: 'application/pdf' });
-    //     const url = URL.createObjectURL(blob);
-    //     setPdfUrl(url);
-    //     setIsLoading(false)
-    // }, [])
+    }, [])
 
     // const showDoc = () => {
     //     function base64ToArrayBuffer(base64) {
@@ -113,7 +110,15 @@ const DocumentInfo = ({ downloadedFile }) => {
                 <p>Завантажити файл</p>
             </div>
             {isLoading 
-                ? <p>Loading PDF...</p>
+                ? <TailSpin
+                visible={true}
+                height="50"
+                width="50"
+                color="#2c425f"
+                ariaLabel="tail-spin-loading"
+                radius="1"
+                wrapperStyle={{ marginTop: '5%' }}
+                wrapperClass="" />
                 : <iframe src={pdfUrl} className={cl.doc__display}></iframe>
             }
         </div>
