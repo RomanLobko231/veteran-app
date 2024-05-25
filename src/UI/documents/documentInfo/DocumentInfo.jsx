@@ -25,10 +25,7 @@ const DocumentInfo = ({ downloadedFile }) => {
 
     const [pdfUrl, setPdfUrl] = useState(null);
 
-    useEffect(() => {
-        console.log(downloadedFile)
-        if (downloadedFile.file) {
-            // Convert byte array to Blob
+    const showDoc = () => {
             const blob = new Blob([new Uint8Array(downloadedFile.file)], { type: 'application/pdf' });
 
             // Create an object URL for the Blob
@@ -36,12 +33,7 @@ const DocumentInfo = ({ downloadedFile }) => {
 
             // Set the URL to state
             setPdfUrl(url);
-
-            // Clean up the URL object when the component unmounts
-            return () => URL.revokeObjectURL(url);
-        }
-    }, [downloadedFile.file]);
-
+    }
 
 
     // const showDoc = () => {
@@ -88,7 +80,7 @@ const DocumentInfo = ({ downloadedFile }) => {
     return (
         <div className={cl.page}>
             <InfoComponent title={downloadedFile.title} date={downloadedFile.date} description={downloadedFile.description} />
-            <div className={cl.button} onClick={downloadFile}>
+            <div className={cl.button} onClick={showDoc}>
                 <TbFileDownload className={cl.icon} />
                 <p>Завантажити файл</p>
             </div>
