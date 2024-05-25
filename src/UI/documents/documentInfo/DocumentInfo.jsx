@@ -98,13 +98,11 @@ const DocumentInfo = ({ downloadedFile }) => {
                 <TbFileDownload className={cl.icon} />
                 <p>Завантажити файл</p>
             </div>
-            <div>
-                {pdfUrl ? (
-                    <iframe src={pdfUrl} width="100%" height="600px"></iframe>
+            {pdfUrl ? (
+                    <iframe src={pdfUrl} className={cl.doc__display}></iframe>
                 ) : (
                     <p>Loading PDF...</p>
                 )}
-            </div>
         </div>
     );
 };

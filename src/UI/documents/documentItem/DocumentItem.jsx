@@ -24,7 +24,10 @@ const DocumentItem = ({ document }) => {
 
 
     return (
-        <div className={cl.card} onClick={() => {navigate(`/documents/${document.id}`)}}>
+        <div className={cl.card} onClick={
+            console.log("not implemented")
+            // () => {navigate(`/documents/${document.id}`)}
+            }>
             <div className={cl.document__info}>
                 <div className={cl.title__date}>
                     <h3>{document.title}</h3>

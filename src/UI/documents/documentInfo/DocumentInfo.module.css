@@ -44,6 +44,10 @@ font-size: larger;
     color: #fcd0c2;
 }
 
+.doc__display{
+    
+}
+
 @media (max-width: 768px){
     .button p{
         font-size: x-small;
