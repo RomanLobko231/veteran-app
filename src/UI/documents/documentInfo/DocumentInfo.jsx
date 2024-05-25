@@ -24,46 +24,46 @@ const DocumentInfo = ({ downloadedFile }) => {
     }
 
 
-    const showDoc = () => {
-        function base64ToArrayBuffer(base64) {
-            const binaryString = atob(base64);
-            const len = binaryString.length;
-            const bytes = new Uint8Array(len);
-            for (let i = 0; i < len; i++) {
-                bytes[i] = binaryString.charCodeAt(i);
-            }
-            return bytes.buffer;
-        }
+    // const showDoc = () => {
+    //     function base64ToArrayBuffer(base64) {
+    //         const binaryString = atob(base64);
+    //         const len = binaryString.length;
+    //         const bytes = new Uint8Array(len);
+    //         for (let i = 0; i < len; i++) {
+    //             bytes[i] = binaryString.charCodeAt(i);
+    //         }
+    //         return bytes.buffer;
+    //     }
         
-        // Convert base64 to ArrayBuffer
-        const arrayBuffer = base64ToArrayBuffer(dow);
+    //     // Convert base64 to ArrayBuffer
+    //     const arrayBuffer = base64ToArrayBuffer(dow);
         
-        // Create a Blob from the ArrayBuffer
-        const blob = new Blob([arrayBuffer], { type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" });
+    //     // Create a Blob from the ArrayBuffer
+    //     const blob = new Blob([arrayBuffer], { type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" });
         
-        // Create an Object URL
-        const url = URL.createObjectURL(blob);
+    //     // Create an Object URL
+    //     const url = URL.createObjectURL(blob);
 
-        console.log(url)
+    //     console.log(url)
 
-        // const byteCharacters = atob(downloadedFile.file);
+    //     // const byteCharacters = atob(downloadedFile.file);
 
-        // const byteNumbers = new Array(downloadedFile.file.length);
-        // for (let i = 0; i < downloadedFile.file.length; i++) {
-        //     byteNumbers[i] = downloadedFile.file.charCodeAt(i);
-        // }
+    //     // const byteNumbers = new Array(downloadedFile.file.length);
+    //     // for (let i = 0; i < downloadedFile.file.length; i++) {
+    //     //     byteNumbers[i] = downloadedFile.file.charCodeAt(i);
+    //     // }
 
-        // // Convert the array to a Uint8Array
-        // const byteArray = new Uint8Array(byteNumbers);
+    //     // // Convert the array to a Uint8Array
+    //     // const byteArray = new Uint8Array(byteNumbers);
 
-        // // Create a Blob from the Uint8Array
-        // const blob = new Blob([byteArray], { type: downloadedFile.mime_type });
-        // const blobUrl = window.URL.createObjectURL(blob);
-        // console.log(blobUrl)
+    //     // // Create a Blob from the Uint8Array
+    //     // const blob = new Blob([byteArray], { type: downloadedFile.mime_type });
+    //     // const blobUrl = window.URL.createObjectURL(blob);
+    //     // console.log(blobUrl)
 
-        setDocs([...docs, { uri: url, fileType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' }])
-        console.log(docs)
-    }
+    //     setDocs([...docs, { uri: url, fileType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' }])
+    //     console.log(docs)
+    // }
 
     return (
         <div className={cl.page}>
