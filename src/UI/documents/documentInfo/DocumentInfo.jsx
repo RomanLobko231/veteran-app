@@ -24,9 +24,9 @@ const DocumentInfo = ({ downloadedFile }) => {
     }
 
     const [pdfUrl, setPdfUrl] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     const showDoc = () => {
-
         function base64ToArrayBuffer(base64) {
             const binaryString = atob(base64);
             const len = binaryString.length;
@@ -38,17 +38,29 @@ const DocumentInfo = ({ downloadedFile }) => {
         }
 
         const arrayBuffer = base64ToArrayBuffer(downloadedFile.file);
-
-
         const blob = new Blob([arrayBuffer], { type: 'application/pdf' });
-
-        // Create an object URL for the Blob
         const url = URL.createObjectURL(blob);
-
-        // Set the URL to state
         setPdfUrl(url);
     }
 
+    useEffect(() => {
+        setIsLoading(true)
+        function base64ToArrayBuffer(base64) {
+            const binaryString = atob(base64);
+            const len = binaryString.length;
+            const bytes = new Uint8Array(len);
+            for (let i = 0; i < len; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+            return bytes.buffer;
+        }
+
+        const arrayBuffer = base64ToArrayBuffer(downloadedFile.file);
+        const blob = new Blob([arrayBuffer], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+        setPdfUrl(url);
+        setIsLoading(false)
+    }, [])
 
     // const showDoc = () => {
     //     function base64ToArrayBuffer(base64) {
@@ -98,11 +110,10 @@ const DocumentInfo = ({ downloadedFile }) => {
                 <TbFileDownload className={cl.icon} />
                 <p>Завантажити файл</p>
             </div>
-            {pdfUrl ? (
-                    <iframe src={pdfUrl} className={cl.doc__display}></iframe>
-                ) : (
-                    <p>Loading PDF...</p>
-                )}
+            {isLoading 
+                ? <p>Loading PDF...</p>
+                : <iframe src={pdfUrl} className={cl.doc__display}></iframe>
+            }
         </div>
     );
 };

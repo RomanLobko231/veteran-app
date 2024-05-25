@@ -45,12 +45,19 @@ font-size: larger;
 }
 
 .doc__display{
-    
+    margin-top: 3%;
+    height: 700px;
+    width: 50%;
 }
 
 @media (max-width: 768px){
     .button p{
         font-size: x-small;
+    }
+
+    .doc__display{
+        height: 700px;
+        width: 95%;
     }
 
     .button{
