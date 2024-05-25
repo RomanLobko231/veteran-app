@@ -1,5 +1,5 @@
 
-import DocViewer, { DocViewerRenderers } from '@cyntler/react-doc-viewer';
+import DocViewer, { DocViewerRenderers, PDFRenderer } from '@cyntler/react-doc-viewer';
 import InfoComponent from '../../infoComponent/InfoComponent';
 import cl from './DocumentInfo.module.css'
 import { TbFileDownload } from "react-icons/tb";
@@ -45,7 +45,7 @@ const DocumentInfo = ({ downloadedFile }) => {
                 <p>Завантажити файл</p>
             </div>
             {pdfUrl 
-                ? <DocViewer documents={{uri: pdfUrl, fileName: downloadedFile.title}} pluginRenderers={DocViewerRenderers} />
+                ? <DocViewer documents={{uri: pdfUrl, fileName: downloadedFile.title}} pluginRenderers={PDFRenderer} />
                 //<iframe src={pdfUrl} className={cl.doc__display}></iframe>
                 : <TailSpin
                 visible={true}
