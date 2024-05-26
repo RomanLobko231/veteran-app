@@ -68,7 +68,10 @@ font-size: larger;
         height: 0;
     }
 
-    
+    :global(#pdf-page-wrapper > div > canvas){
+        width: 90%;
+        height: 90%;
+    }
 
     .doc__display{
         height: 700px;
