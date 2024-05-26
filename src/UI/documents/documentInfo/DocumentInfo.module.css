@@ -50,10 +50,25 @@ font-size: larger;
     width: 50%;
 }
 
+
 @media (max-width: 768px){
     .button p{
         font-size: x-small;
     }
+
+    :global(#pdf-page-wrapper > div > div.react-pdf__Page__textContent.textLayer) {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    :global(#pdf-page-wrapper > div > div.react-pdf__Page__annotations.annotationLayer){
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    
 
     .doc__display{
         height: 700px;
