@@ -60,10 +60,12 @@
     color: #111111;
 }
 
-
-
 .nav__links a:active {
     color: #0f0e0e;
+}
+
+.nav__links hr{
+    display: none;
 }
 
 @media (max-width: 786px) {
@@ -71,6 +73,10 @@
     .navbar {
         width: 90%;
         margin-top: 7px;
+    }
+
+    .nav__links.active hr{
+        display: flex;
     }
 
     .navbar.active {

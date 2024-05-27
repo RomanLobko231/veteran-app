@@ -46,7 +46,29 @@ const DocumentInfo = ({ downloadedFile }) => {
             </div>
             {pdfUrl 
                 ? <> {window.innerWidth < 768
-                ? <DocViewer documents={[{uri: pdfUrl, fileName: downloadedFile.title}]} pluginRenderers={[PDFRenderer]} />
+                ? <DocViewer theme={{
+                    primary: "#5296d8",
+                    secondary: "#fafeff",
+                    tertiary: "#5296d899",
+                    textPrimary: "fafeff",
+                    textSecondary: "#5296d8",
+                    textTertiary: "#00000099",
+                    disableThemeScrollbar: false,
+                  }}
+                  config={{
+                    header: {
+                      disableHeader: false,
+                      disableFileName: false,
+                      retainURLParams: false,
+                    },
+                    csvDelimiter: ",",
+                    pdfZoom: {
+                      defaultZoom: 1.3, 
+                      zoomJump: 0.1, 
+                    },
+                    pdfVerticalScrollByDefault: true, 
+                  }}
+                  documents={[{uri: pdfUrl, fileName: downloadedFile.title}]} pluginRenderers={[PDFRenderer]} />
                 : <iframe src={pdfUrl} className={cl.doc__display}></iframe>
                 }
                 </>
