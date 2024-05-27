@@ -47,12 +47,12 @@ const DocumentInfo = ({ downloadedFile }) => {
             {pdfUrl 
                 ? <> {window.innerWidth < 768
                 ? <DocViewer theme={{
-                    primary: "#5296d8",
+                    primary: "#fafeff",
                     secondary: "#fafeff",
-                    tertiary: "#5296d899",
-                    textPrimary: "fafeff",
-                    textSecondary: "#5296d8",
-                    textTertiary: "#00000099",
+                    tertiary: "#fafeff",
+                    textPrimary: "#fafeff",
+                    textSecondary: "#fafeff",
+                    textTertiary: "#fafeff",
                     disableThemeScrollbar: false,
                   }}
                   config={{
