@@ -37,6 +37,7 @@ const Navbar = () => {
         <nav className={navLinks.join(" ")}>
             <Link to="/main" onClick={handleShowNavbar}>Головна</Link>
             <Link to="/news" onClick={handleShowNavbar}>Корисна iнформацiя</Link>
+            <Link to="/documents" onClick={handleShowNavbar}>Документи</Link>
             <Link to="/careers" onClick={handleShowNavbar}>Вакансiї</Link>
         </nav>
       </nav>
