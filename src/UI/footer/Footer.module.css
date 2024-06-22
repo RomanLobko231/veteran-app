@@ -48,3 +48,15 @@
 .navigation a:active {
     color: #0f0e0e;
 }
+
+.link{
+    font-size: x-small;
+    color: #3b3b3b;
+    cursor: pointer;
+    font-style: italic;
+}
+
+.link:link, link:visited, link:hover, link:active {
+    text-decoration: none;
+  }
+

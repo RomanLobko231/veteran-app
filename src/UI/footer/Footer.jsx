@@ -12,8 +12,7 @@ const Footer = () => {
             <Link to="/news">Корисна iнформацiя</Link>
             <Link to="/careers">Кар'єра</Link>
         </nav>
-        <p>© Copyright 2024</p>
-        <p>Made by Roman Lobko</p>
+        <a className={cl.link} href='https://roman-lobko.netlify.app/'>Made by Roman Lobko</a>
     </footer>
   );
 };
