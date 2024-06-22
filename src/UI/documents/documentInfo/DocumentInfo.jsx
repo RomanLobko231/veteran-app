@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import DocumentsService from '../../../api/DocumentsService';
 import { useApiCall } from '../../../hooks/useApiCall';
 import { TailSpin } from 'react-loader-spinner';
+import { FILE_DOWNLOAD_BASE_URL } from './../../../api/api';
 
 
 const DocumentInfo = ({ downloadedFile }) => {
