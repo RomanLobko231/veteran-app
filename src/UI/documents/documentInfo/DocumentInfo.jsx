@@ -41,7 +41,7 @@ const DocumentInfo = ({ downloadedFile }) => {
             <InfoComponent title={downloadedFile.title} date={downloadedFile.date} description={downloadedFile.description} />
             <a href={downloadURL} download className={cl.button}>
                 <TbFileDownload className={cl.icon}/>
-                    <p> Скачати </p>
+                    <p> Завантажити </p>
                 </a>
             {pdfUrl 
                 ? <> {window.innerWidth < 768

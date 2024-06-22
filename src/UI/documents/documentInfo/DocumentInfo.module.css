@@ -32,7 +32,6 @@ font-size: larger;
 .button p{
     margin: 0;
     display: flex;
-    font-size: medium;
     color: #7c7c7c;
 }
 
@@ -83,12 +82,12 @@ font-size: larger;
         width: 95%;
     }
 
-    .button p{
+    /* .button p{
         font-size: x-small;
-    }
+    } */
 
     .button{
-        padding: 1% 2% 1% 2%;
+        padding: 2% 3%;
     }
 
     .icon{
