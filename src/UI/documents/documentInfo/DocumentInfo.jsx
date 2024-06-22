@@ -12,9 +12,7 @@ import { TailSpin } from 'react-loader-spinner';
 const DocumentInfo = ({ downloadedFile }) => {
 
     const [pdfUrl, setPdfUrl] = useState(null);
-    const [downloadFile, isFileLoading, errors] = useApiCall( (id) => {
-        DocumentsService.downloadFIleById(id);
-   })
+    const downloadURL = FILE_DOWNLOAD_BASE_URL + downloadedFile.id;
 
     useEffect(() => {
         if(downloadedFile.file){
@@ -40,10 +38,10 @@ const DocumentInfo = ({ downloadedFile }) => {
     return (
         <div className={cl.page}>
             <InfoComponent title={downloadedFile.title} date={downloadedFile.date} description={downloadedFile.description} />
-            <div className={cl.button} onClick={() => {downloadFile(downloadedFile.id)}}>
-                <TbFileDownload className={cl.icon} />
-                <p>Завантажити файл</p>
-            </div>
+            <a href={downloadURL} download className={cl.button}>
+                <TbFileDownload className={cl.icon}/>
+                    <p> Скачати </p>
+                </a>
             {pdfUrl 
                 ? <> {window.innerWidth < 768
                 ? <DocViewer theme={{

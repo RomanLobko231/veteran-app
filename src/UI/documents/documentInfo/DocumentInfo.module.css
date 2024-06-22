@@ -24,9 +24,10 @@ font-size: larger;
 }
 
 .icon{
-    display: none;
+    height: 100%;
+    width: 100%;
+    color: #7c7c7c;
 }
-
 
 .button p{
     margin: 0;
@@ -40,9 +41,13 @@ font-size: larger;
 }
 
 .button:hover p,
-    .download:hover .icon {
+.download:hover .icon {
     color: #fcd0c2;
 }
+
+.button:link, button:visited, button:hover, button:active {
+    text-decoration: none;
+  }
 
 .doc__display{
     margin-top: 3%;
@@ -78,9 +83,12 @@ font-size: larger;
         width: 95%;
     }
 
+    .button p{
+        font-size: x-small;
+    }
+
     .button{
         padding: 1% 2% 1% 2%;
-        margin: 0% 0% 3% 0%;
     }
 
     .icon{

@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import DocumentsService from '../../../api/DocumentsService';
-import { useApiCall } from '../../../hooks/useApiCall';
 import cl from './DocumentItem.module.css'
 import { TbFileDownload } from "react-icons/tb";
+import { FILE_DOWNLOAD_BASE_URL } from './../../../api/api';
+
 
 
 const DocumentItem = ({ document }) => {
@@ -18,9 +18,7 @@ const DocumentItem = ({ document }) => {
         second: '2-digit',
     }).replace(/\//g, '.');
 
-    const [downloadFile, isFileLoading, errors] = useApiCall( (id) => {
-        DocumentsService.downloadFIleById(id);
-   })
+   const downloadURL = FILE_DOWNLOAD_BASE_URL + document.id;
 
 
     return (
@@ -31,12 +29,13 @@ const DocumentItem = ({ document }) => {
                     <p>{formattedCreatedDate}</p>
                 </div>
             </div>
-            <div className={cl.download} onClick={(e) => {
-                downloadFile(document.id);
-                e.stopPropagation();
-            }}>
+            <div onClick={(e) => {e.stopPropagation();}} style={{display: "contents"}}>
+                <a href={downloadURL} download className={cl.button}>
                 <TbFileDownload className={cl.icon} />
-                <p>Завантажити</p>
+                <p>
+                    Завантажити
+                </p>
+            </a>
             </div>
         </div>
     );
