@@ -10,4 +10,13 @@
 
 .documents__list a{
     cursor: pointer;
+    color: #7c7c7c;
+}
+
+@media (max-width: 768px){
+    .documents__list p {
+        font-size: small;
+        text-align: center;
+        color: #7c7c7c;
+    }
 }
