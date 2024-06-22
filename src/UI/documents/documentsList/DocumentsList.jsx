@@ -7,6 +7,7 @@ const DocumentsList = ({ documents }) => {
       {documents.map( document =>
         <DocumentItem document={document} key={document.title}/>
         )}
+        <p>Документи та інформацію взято для некомерційного використання з сайту <a href='https://turbota.mil.gov.ua/zrazky-documentiv'></a>ТУРБОТА про військовослужбовця</p>
     </div>
   );
 };
