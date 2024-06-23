@@ -36,11 +36,11 @@ const Navbar = () => {
         }
         <nav className={navLinks.join(" ")}>
             <Link to="/main" onClick={handleShowNavbar}>Головна</Link>
-            <hr style={{width: '50%'}}/>
+            <hr/>
             <Link to="/news" onClick={handleShowNavbar}>Корисна iнформацiя</Link>
-            <hr style={{width: '50%'}}/>
+            <hr/>
             <Link to="/documents" onClick={handleShowNavbar}>Документи</Link>
-            <hr style={{width: '50%'}}/>
+            <hr/>
             <Link to="/careers" onClick={handleShowNavbar}>Вакансiї</Link>
         </nav>
       </nav>
