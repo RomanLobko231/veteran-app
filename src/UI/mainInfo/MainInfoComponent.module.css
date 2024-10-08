@@ -11,6 +11,7 @@
 .image__container{
     width: 40%; 
     height: auto;
+    animation: flyInFromLeft 0.7s ease-out;
 }
 
 .image__container img {
@@ -28,16 +29,18 @@
 
 .text p {
     font-size: large;
-    color: #32485c;
+    color: #21303d;
+    
 }
 
 .info{
     width: 60%;
     margin-left: 20px;
     padding: 24px;
-    background-color: rgba(255, 243, 188, 0.3);
+    background: radial-gradient(circle at 10% 20%, rgb(249, 250, 194) 0%, rgb(248, 234, 205) 90%);    
     border-radius: 16px;
     box-shadow: 0px 2px 6px rgba(107, 51, 25, 0.05);
+    animation: flyInFromBottom 0.7s ease-out;
 
 }
 
@@ -65,4 +68,24 @@
     flex-direction: column;
     justify-content: center;
 }
+}
+
+@keyframes flyInFromLeft {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes flyInFromBottom {
+    0% {
+        transform: translateY(50%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
 }

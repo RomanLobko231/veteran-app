@@ -11,6 +11,7 @@
     text-decoration: none;
     border: 2px solid transparent;
     transition: border 0.5s ease;
+    animation: flyInFromBottom 0.7s ease-out;
 }
 
 .news__card img{
@@ -41,4 +42,14 @@
 
 .title__date p, h3{
     margin-bottom: 0;
+}
+
+@keyframes flyInFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
 }
