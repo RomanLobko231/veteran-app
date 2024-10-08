@@ -33,7 +33,7 @@ const NewsComponent = () => {
                     wrapperStyle={{ marginTop: '5%' }}
                     wrapperClass=""
                 />
-                : <NewsList news={news.reverse()} />
+                : <NewsList news={news} />
             }
             <button className={cl.button} onClick={() => navigate('/news')}>Дiзнатися бiльше</button>
         </div>
