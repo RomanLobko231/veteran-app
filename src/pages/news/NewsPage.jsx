@@ -12,7 +12,7 @@ const NewsPage = () => {
     const [news, setNews] = useState([]);
     const [fetchNews, isLoading, error] = useApiCall( async () => {
         const response = await NewsService.getAll();
-        setNews(response.data)
+        setNews(response.data.reverse())
     })
 
     useEffect(() => {

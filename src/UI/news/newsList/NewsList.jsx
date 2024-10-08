@@ -5,7 +5,7 @@ const NewsList = ({news}) => {
 
     return (
         <div className={cl.news__list}>
-            {news.reverse().map(news =>
+            {news.map(news =>
                 <NewsItem news={news} key={news.id}/>
             )}
         </div>
