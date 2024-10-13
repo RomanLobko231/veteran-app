@@ -11,7 +11,7 @@
 .image__container{
     width: 40%; 
     height: auto;
-    animation: flyInFromLeft 0.7s ease-out;
+    animation: flyInFromUp 0.5s ease-out;
 }
 
 .image__container img {
@@ -39,8 +39,8 @@
     padding: 24px;
     background: radial-gradient(circle at 10% 20%, rgb(249, 250, 194) 0%, rgb(248, 234, 205) 90%);    
     border-radius: 16px;
-    box-shadow: 0px 2px 6px rgba(107, 51, 25, 0.05);
-    animation: flyInFromBottom 0.7s ease-out;
+    box-shadow: 0 2px 5px #6b33193d;
+    animation: flyInFromBottom 0.5s ease-out;
 
 }
 
@@ -70,22 +70,26 @@
 }
 }
 
-@keyframes flyInFromLeft {
+@keyframes flyInFromUp {
     0% {
         transform: translateY(-50%);
+        opacity: 0;
     }
 
     100% {
         transform: translateY(0%);
+        opacity: 1;
     }
 }
 
 @keyframes flyInFromBottom {
     0% {
         transform: translateY(50%);
+        opacity: 0;
     }
 
     100% {
         transform: translateY(0%);
+        opacity: 1;
     }
 }
