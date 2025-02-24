@@ -1,95 +1,108 @@
-.info__container{
-     margin-top: 70px;
-     width: 80%;
-     display: flex;
-     flex-direction: row;
-     justify-content: space-around;
-     align-items: center;
-     max-width: 2500px;
+.info__container {
+  margin-top: 70px;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1500px;
 }
 
-.image__container{
-    width: 40%; 
-    height: auto;
-    animation: flyInFromUp 0.5s ease-out;
+.info_contacts {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-left: 20px;
+  animation: flyInFromBottom 0.5s ease-out;
+  align-items: center;
+}
+
+.image__container {
+  width: 40%;
+  height: auto;
+  animation: flyInFromUp 0.5s ease-out;
 }
 
 .image__container img {
-    width: 100%;
-    height: auto;
-    max-height: 450px;
-    object-fit: contain;
-    border-radius: 50%;
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: contain;
+  border-radius: 50%;
 }
 
-.text h1{
-    margin-top: 0;
-    color: #11202e;
+.text h1 {
+  margin-top: 0;
+  color: #1e3247;
 }
 
 .text p {
-    font-size: large;
-    color: #21303d;
-    
+  font-size: large;
+  color: #21303d;
 }
 
-.info{
-    width: 60%;
-    margin-left: 20px;
-    padding: 24px;
-    background: radial-gradient(circle at 10% 20%, rgb(249, 250, 194) 0%, rgb(248, 234, 205) 90%);    
-    border-radius: 16px;
-    box-shadow: 0 2px 5px #6b33193d;
-    animation: flyInFromBottom 0.5s ease-out;
-
+.info {
+  width: 100%;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(249, 250, 194) 0%,
+    rgb(248, 234, 205) 90%
+  );
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 5px #6b33193d;
+  border: 1px #6b33193d solid;
 }
 
 @media (max-width: 1050px) {
-.info__container{
+  .info__container {
     flex-direction: column;
     width: 100%;
-}
+  }
 
-.image__container{
+  .image__container {
     width: 80%;
-}
+  }
 
-.text p {
+  .text p {
     font-size: medium;
-}
+  }
 
-
-.info{
-    margin-top: 32px;
+  .info {
     padding: 12px;
-    margin-left: 0;
-    width: 90%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
+  }
+
+  .info_contacts {
+    margin-top: 32px;
+    margin-left: 0;
+    width: 90%;
+  }
 }
 
 @keyframes flyInFromUp {
-    0% {
-        transform: translateY(-50%);
-        opacity: 0;
-    }
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
 
-    100% {
-        transform: translateY(0%);
-        opacity: 1;
-    }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }
 
 @keyframes flyInFromBottom {
-    0% {
-        transform: translateY(50%);
-        opacity: 0;
-    }
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
 
-    100% {
-        transform: translateY(0%);
-        opacity: 1;
-    }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }

@@ -1,78 +1,75 @@
-.card{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 80%;
-    max-height: 125px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-    background: #fff;
-    padding: 3% 1% 3% 3%;
-    border-radius: 18px;
-    justify-content: space-between;
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+  max-height: 125px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 3% 1% 3% 3%;
+  border-radius: 18px;
+  border: 1px #354353 solid;
+  justify-content: space-between;
 }
 
-.career__info{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    height: 100%;
+.career__info {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
 }
 
-.card:hover{
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+.card:hover {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.icon{
-    height: 60%;
-    width: 10%;
+.icon {
+  height: 60%;
+  width: 10%;
 }
 
-.title__city{
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
+.title__city {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .title__city h3 {
-    margin: 0;
-    word-break: break-word;
+  margin: 0;
+  word-break: break-word;
 }
 
-
 .title__city p {
-margin: 0;
-color: #616161;
+  margin: 0;
+  color: #616161;
 }
 
 .dot {
-    height: 7%;
-    aspect-ratio: 1;
-    background-color: #353434;
-    border-radius: 50%;
-    display: inline-block;
+  height: 7%;
+  aspect-ratio: 1;
+  background-color: #353434;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 5%;
   }
 
+  .title__city p {
+    margin: 0;
+  }
 
-
-
-@media (max-width: 768px){
-    .card{
-        padding: 5%;
-    }
-
-    .title__city p {
-        margin: 0;
-    }
-    
-    /* .icon{
+  /* .icon{
         display: none;
     } */
 
-    .dot{
-        display: none;
-    }
+  .dot {
+    display: none;
+  }
 }

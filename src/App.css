@@ -1,35 +1,45 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); */
 
-
 @font-face {
-  font-family: "Title";  
+  font-family: "Title";
   src: local("e-UkraineHead-Regular"),
     url("./fonts/e_ukraine/e-UkraineHead-Regular.otf") format("opentype");
 }
 
 @font-face {
-  font-family: "Text";  
+  font-family: "Text";
   src: local("e-Ukraine-Regular"),
     url("./fonts/e_ukraine/e-Ukraine-Regular.otf") format("opentype");
 }
 
-body{
-    font-family: "Text";
-    background-color: rgba(214, 247, 255, 0.1);
-    margin: 0 ;
+body {
+  font-family: "Text";
+  background-color: rgba(214, 247, 255, 0.1);
+  margin: 0;
 }
 
-body h1, h2, a {
-  font-family: 'Title';
+body h1,
+h2,
+a {
+  font-family: "Title";
 }
 
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
   font-family: inherit;
 }
 
-#root{
+#root {
   width: 100%;
   flex-direction: column;
   display: flex;
   align-items: center;
+}
+
+.navbar_container {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
 }
